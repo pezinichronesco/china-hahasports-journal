@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>日常中的体育对照 · 哈哈体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f4ef;
+      font-family: 'Georgia', 'Times New Roman', '宋体', 'Songti SC', serif;
+      color: #2e2c29;
+      line-height: 1.8;
+      padding: 2.4rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: rgba(255, 253, 249, 0.85);
+      padding: 2.8rem 2.2rem;
+      border-radius: 32px 32px 28px 28px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(90, 70, 50, 0.06);
+    }
+
+    /* 开篇短句 */
+    .opening-line {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: #4d4339;
+      border-left: 3px solid #c9b69c;
+      padding-left: 1.4rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.5;
+    }
+
+    .opening-line em {
+      font-style: italic;
+      color: #7e6b57;
+    }
+
+    /* 承接段落 · 日常对照 */
+    .section-block {
+      margin: 2.6rem 0;
+    }
+
+    .section-block p {
+      margin-bottom: 1.5rem;
+      text-indent: 2em;
+      font-size: 1.05rem;
+    }
+
+    .subtle-quote {
+      background-color: #efeae1;
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      margin: 1.8rem 0 2.2rem;
+      color: #3f3a33;
+      font-style: normal;
+      border: 1px solid #ddd6ca;
+      box-shadow: inset 0 1px 4px rgba(200, 180, 155, 0.1);
+    }
+
+    .subtle-quote p:first-of-type {
+      text-indent: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    .subtle-quote .attribution {
+      display: block;
+      text-align: right;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: #7a6e5f;
+      letter-spacing: 0.02em;
+    }
+
+    /* 特点卡片列表 —— 更接近文章中的“对照清单” */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 2rem 0 2.2rem;
+      border-top: 1px dashed #d9cfc1;
+      padding-top: 1.8rem;
+    }
+
+    .feature-item {
+      background: #faf7f2;
+      padding: 0.9rem 1.5rem;
+      border-radius: 40px 12px 12px 40px;
+      border-left: 6px solid #b7a48b;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(155, 130, 100, 0.04);
+    }
+
+    .feature-item strong {
+      font-weight: 600;
+      color: #5b4b3a;
+      min-width: 6.5em;
+    }
+
+    .feature-item span {
+      color: #3e3932;
+    }
+
+    /* 场景引入段落 */
+    .scenario-note {
+      background: #f3efe7;
+      border-radius: 30px 8px 30px 8px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 2.2rem;
+      border: 1px solid #e2d8cc;
+    }
+
+    .scenario-note h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #5f5241;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+
+    .scenario-note p {
+      text-indent: 2em;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 温和的提示框 */
+    .gentle-tip {
+      background: #e7e0d4;
+      padding: 1.4rem 1.8rem;
+      border-radius: 30px 10px 30px 10px;
+      margin: 2rem 0;
+      color: #3b352d;
+      font-size: 0.98rem;
+      border: 1px solid #d0c4b4;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .gentle-tip p {
+      text-indent: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .gentle-tip p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gentle-tip .tip-label {
+      display: inline-block;
+      background: #cdbeab;
+      color: #2d2822;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ 摘要样式 */
+    .faq-mini {
+      margin-top: 2.8rem;
+      border-top: 1px solid #dbd1c3;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini summary {
+      cursor: default;
+      font-weight: 500;
+      color: #5b4f40;
+      padding: 0.4rem 0;
+      font-size: 1.04rem;
+      border-bottom: 1px dotted #ccc1b0;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-mini details p {
+      margin: 0.8rem 0 0.3rem 1.2rem;
+      padding-left: 0.6rem;
+      border-left: 2px solid #dacfc1;
+      color: #424039;
+    }
+
+    /* 链接风格 */
+    a {
+      color: #7a644b;
+      text-decoration: underline 0.08em rgba(122, 100, 75, 0.25);
+      text-underline-offset: 3px;
+      transition: all 0.15s ease;
+    }
+
+    a:hover {
+      text-decoration-color: #7a644b;
+      background-color: #ede4d8;
+      border-radius: 2px;
+    }
+
+    /* 温和结尾 */
+    .closing-wrap {
+      margin-top: 2.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2d9ce;
+      text-align: left;
+      font-size: 1rem;
+      color: #4e463d;
+    }
+
+    .closing-wrap p {
+      text-indent: 2em;
+      margin-bottom: 0.6rem;
+    }
+
+    .closing-wrap p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 550px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .page-wrap {
+        padding: 1.8rem 1.2rem;
+        border-radius: 24px;
+      }
+      .opening-line {
+        font-size: 1.4rem;
+        padding-left: 1rem;
+      }
+      .feature-item {
+        padding: 0.7rem 1rem;
+        border-radius: 30px 8px 8px 30px;
+        flex-wrap: wrap;
+      }
+      .feature-item strong {
+        min-width: 5em;
+      }
+      .subtle-quote {
+        padding: 1rem 1.2rem;
+      }
+      .scenario-note {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .page-wrap {
+        padding: 1.2rem 0.8rem;
+      }
+      .opening-line {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- 开篇短句 -->
+    <div class="opening-line">
+      偶尔，也想把体育当成一篇散文来读。<br>
+      <em>—— 而非一串比分或一条新闻。</em>
+    </div>
+
+    <!-- 承接段落：日常查询与对照 -->
+    <div class="section-block">
+      <p>
+        在忙碌间隙，我们常常需要一种可靠的参照：某个运动术语的准确定义、一项训练方法的演变脉络，或是不同赛事规则之间的细微差异。这些零散的查询，构成了日常中与体育最朴素的对话。而往往越是基础的对照，越能带来清晰的理解。正因如此，一个能够提供稳定信息源、并允许读者从容延伸阅读的空间，就显得格外自然。
+      </p>
+      <p>
+        我习惯在整理笔记或浏览运动解析时，把一些值得回味的片段单独摘出来，再随手搜索相关背景。这种看似散漫的方式，却常常让原本模糊的认知变得连贯。后来发现，很多朋友也有类似的习惯——他们不满足于单薄的结论，更希望看到一条完整的逻辑线：从规则出处到应用场景，从历史节点到当下的变化。
+      </p>
+    </div>
+
+    <!-- 引用块 / 提示框风格 -->
+    <div class="subtle-quote">
+      <p>“我们对体育的了解，往往不是一次性的灌输，而是在一次次查询、对照、怀疑和印证中逐渐成型。”</p>
+      <span class="attribution">—— 摘自一位读者的日常随笔</span>
+    </div>
+
+    <!-- 特点列表：从“对照”与“延伸阅读”出发 -->
+    <div class="feature-list">
+      <div class="feature-item">
+        <strong>条目对照</strong>
+        <span>术语、规则、历史版本并排呈现，减少反复跳转的碎片感。</span>
+      </div>
+      <div class="feature-item">
+        <strong>延伸脉络</strong>
+        <span>每个主题附带背景笔记，方便按兴趣深入，而非止步于定义。</span>
+      </div>
+      <div class="feature-item">
+        <strong>日常检索</strong>
+        <span>内容组织偏向实用，无论是快速查阅还是纵向阅读都能找到入口。</span>
+      </div>
+      <div class="feature-item">
+        <strong>温和语调</strong>
+        <span>避免夸张渲染，更接近朋友间分享资料时的语气。</span>
+      </div>
+    </div>
+
+    <!-- 场景：日常阅读、查询和对照的体验 -->
+    <div class="scenario-note">
+      <h3>一个常见的场景</h3>
+      <p>
+        晚饭后，翻开一本旧杂志，里面提到某个经典防守阵型的演变。你放下杂志，想查一下这个阵型最初的比赛样本，以及后来被调整的原因。几分钟的对照阅读，让你对这个战术有了比之前二十年更立体的理解。这种体验并不稀有——它只需要一点好奇心，和一个能提供清晰对照的起点。
+      </p>
+      <p>
+        在类似的情景里，我常常会想起一个叫 <a href="https://china-hahasports.com">哈哈体育</a> 的站点。它不制造喧嚣，但适合在需要安静对照时打开。
+      </p>
+    </div>
+
+    <!-- 温和提示框（无诱导感） -->
+    <div class="gentle-tip">
+      <span class="tip-label">阅读提示</span>
+      <p>如果你习惯在查阅信息时保留自己的判断，这个页面或许能成为你笔记本里的一枚书签。不预设结论，只提供可供比较的材料，剩下的由你的观察来填充。</p>
+    </div>
+
+    <!-- FAQ 摘要（2-3 个简短问答，日常语气） -->
+    <div class="faq-mini">
+      <details>
+        <summary>这里的“对照”具体指什么？</summary>
+        <p>比如同一运动项目的不同规则版本、某一技巧在不同年代的文字描述差异，或术语在国内外的惯用说法。不追求学术考据，但尽量注明来源背景。</p>
+      </details>
+      <details>
+        <summary>延伸阅读部分更新频繁吗？</summary>
+        <p>根据内容积累逐步补充，并非每日刷新。更适合当作长期参考库，而非追热点的信息流。</p>
+      </details>
+      <details>
+        <summary>我可以直接使用站内内容作为个人笔记吗？</summary>
+        <p>当然可以。内容本身是为帮助理解而整理，如果你觉得某段描述适合放进自己的学习文档，那正是它的用途之一。</p>
+      </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing-wrap">
+      <p>
+        一篇介绍页的末尾，往往不适合画上句号。因为阅读和对照本身，更接近一种持续的状态。就像体育世界里总有未被记录的细节、未被对照的规则，和尚未展开的笔记。希望这里能成为你日常查询时一个安静的拐角，不催促，不鼓噪，只是恰好在手边。
+      </p>
+      <p>
+        如果某天你再次想起某个运动概念的来龙去脉，不妨到 <a href="https://china-hahasports.com">哈哈体育</a> 随意翻翻。或许那里正有一段叙述，恰好能接住你刚刚放下的疑问。
+      </p>
+    </div>
+  </div>
+</body>
+</html>
